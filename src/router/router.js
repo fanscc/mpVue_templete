@@ -3,7 +3,7 @@ module.exports = [{
   path: 'pages/index/index',
   name: 'Index',
   config: {
-    navigationBarTitleText: '文章详情'
+    navigationBarTitleText: '文章详情1'
   }
 }, {
   path: 'pages/logs/index',

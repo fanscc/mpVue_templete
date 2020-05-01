@@ -1,38 +1,37 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 var fileExtConfig = {
-    swan: {
-        template: 'swan',
-        script: 'js',
-        style: 'css',
-        platform: 'swan'
-    },
-    tt: {
-        template: 'ttml',
-        script: 'js',
-        style: 'ttss',
-        platform: 'tt'
-    },
-    wx: {
-        template: 'wxml',
-        script: 'js',
-        style: 'wxss',
-        platform: 'wx'
-    },
-    my: {
-        template: 'axml',
-        script: 'js',
-        style: 'acss',
-        platform: 'my'
-    }
+  swan: {
+    template: 'swan',
+    script: 'js',
+    style: 'css',
+    platform: 'swan'
+  },
+  tt: {
+    template: 'ttml',
+    script: 'js',
+    style: 'ttss',
+    platform: 'tt'
+  },
+  wx: {
+    template: 'wxml',
+    script: 'js',
+    style: 'wxss',
+    platform: 'wx'
+  },
+  my: {
+    template: 'axml',
+    script: 'js',
+    style: 'acss',
+    platform: 'my'
+  }
 }
 var fileExt = fileExtConfig[process.env.PLATFORM]
 
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, `../dist/${fileExt.platform}/index.html`),
-    assetsRoot: path.resolve(__dirname, `../dist/${fileExt.platform}`),
+    assetsRoot: path.resolve(__dirname, `../dist`),
     assetsSubDirectory: '',
     assetsPublicPath: '/',
     productionSourceMap: false,

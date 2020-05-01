@@ -1,8 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/index",
-    "pages/counter/index"
+    "^pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,7 +15,7 @@
     "borderStyle": "white",
 
     "list": [{
-      "text": "首页",
+      "text": "首页1",
       "pagePath": "pages/index/index",
       "iconPath": "static/tabs/home.png",
       "selectedIconPath": "static/tabs/home-active.png"
