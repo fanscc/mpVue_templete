@@ -10,20 +10,19 @@
 
 <script>
 // Use Vuex
-import store from './store'
-
+import { mapGetters } from 'vuex'
 export default {
   computed: {
-    count () {
-      return store.state.count
-    }
+    ...mapGetters([
+      'count'
+    ])
   },
   methods: {
     increment () {
-      store.commit('increment')
+      this.$store.commit('increment')
     },
     decrement () {
-      store.commit('decrement')
+      this.$store.commit('decrement')
     }
   }
 }

@@ -29,12 +29,13 @@
         <div class="right">
         </div>
     </div>
+    <van-button type="primary" @click="test">按钮</van-button>
   </div>
 </template>
 
 <script>
 import card from '@/components/card'
-
+import wx from 'wx'
 export default {
   data () {
     return {
@@ -61,6 +62,16 @@ export default {
     clickHandle (ev) {
       console.log('clickHandle:', ev)
       // throw {message: 'custom test'}
+    },
+    test () {
+      wx.showModal({
+          title: '账号存在异常',
+          content: 'csdsaf',
+          showCancel: false,
+          success: (res) => {
+            console.log(22)
+          }
+      })
     }
   },
 

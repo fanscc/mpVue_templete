@@ -11,7 +11,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var relative = require('relative')
 const MpvueEntry = require('mpvue-entry')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -47,7 +47,9 @@ let baseWebpackConfig = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue': 'mpvue',
-      '@': resolve('src')
+      '@': resolve('src'),
+      flyio: 'flyio/dist/npm/wx',
+      wx: resolve('src/utils/wx')
     },
     symlinks: false,
     aliasFields: ['mpvue', 'weapp', 'browser'],
@@ -76,7 +78,7 @@ let baseWebpackConfig = {
           'babel-loader',
           {
             loader: 'mpvue-loader',
-            options: Object.assign({checkMPEntry: true}, vueLoaderConfig)
+            options: Object.assign({ checkMPEntry: true }, vueLoaderConfig)
           }
         ]
       },
@@ -115,10 +117,10 @@ let baseWebpackConfig = {
     new MpvueEntry(),
     new MpvuePlugin(),
     // new CopyWebpackPlugin([{
-    //   from: '**/*.json',
-    //   to: ''
+    //   from: 'ui',
+    //   to: 'ui'
     // }], {
-    //   context: 'src/'
+    //   context: 'static/'
     // }),
     new CopyWebpackPlugin([
       {
