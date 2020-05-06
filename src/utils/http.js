@@ -27,9 +27,8 @@ http.config.headers = {
     grp: 'winretailrc',
     'Accept-Language': 'zh-CN'
 }
-// http.config.baseURL = 'http://172.18.3.230:33600';// UAT测试
-
-http.config.baseURL = process.env.BASE_URL
+// api 代理
+http.config.baseURL = process.env.NODE_ENV === 'development' ? '/api' : '/'
 http.interceptors.request.use((request) => {
     !request.hide_Loading && wx.showNavigationBarLoading()
     request.headers.Token = wx.getStorageSync('userInfo').token

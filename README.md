@@ -19,10 +19,13 @@ npm dev
 npm build
 
 # 指定平台的开发时构建(微信、百度、头条、支付宝)
-npm dev:wx
-npm dev:swan
-npm dev:tt
-npm dev:my
+npm run dev --env=uat --otp=wx
+
+env后面接代理地址,otp后面接平台 微信、百度、头条、支付宝/wx, swan, tt, my
+
+env没有赋值的时候选择代理本地地址,opt没有赋值的时候默认wx
+
+当直接输入npm run dev时候代表需要代理局域网内的后台地址跟平台是微信
 
 # 指定平台的打包构建
 npm build:wx
